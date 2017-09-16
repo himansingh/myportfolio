@@ -42,12 +42,12 @@
          </button>
          <div  class="collapse navbar-collapse" id="navbarResponsive">
             <ul  class="navbar-nav ml-auto">
-               <li class="nav-item active">
-                  <a class="nav-link" href="#">Home
+               <li class="nav-item">
+                  <a class="nav-link active" href="#">Home
                     <span class="sr-only">(current)</span>
                   </a>
                </li>
-               <li class="nav-item">
+               <li class="nav-item ">
                   <a class="nav-link" href="#about">About</a>
                </li>
                <li class="nav-item">
@@ -68,11 +68,13 @@
                <div class="tlt text-white">Hi, I'm HIMANSHU.</div> 
                <small class="second-ani text-white"> I design and develop Frontend applications. </small> 
             </h1>
+            <br>
+            <a href="https://himansingh.github.io" class="btn btn-warning" id="topButton">Check my other website</a>
          </div>
       </div>
       </header>
 
-   <section id="about" style="background-color: #FFEDC2;  color : #6D9348;">
+   <section id="about" style="background-color: #FFEDC2;  color : #6D9348; padding-bottom: 25px;">
       <div class="text-center section-head"> About Me </div> 
       <div class="text-center"><hr class="title-seperator title-seperator4"></div>  
       <div class="container">
@@ -203,6 +205,8 @@
          // Animation on scroll
          
          let aboutSectionOffset = $('#about').offset().top/2;
+         let workSectionOffset = $('#myWork').offset().top/1.5 ;
+         let contactSectionOffset = $('#contact').offset().top/1.3 ;
          let cardOffset = $('.card').offset().top/1.6 ;
          console.log(cardOffset);
 
@@ -223,7 +227,40 @@
                $('#about img').removeClass('hideCard').addClass('animated fadeIn');
             }
 
+            if(scrollPos < aboutSectionOffset ){
+
+               $('[href="#"]').addClass('active');
+               $('[href="#myWork"]').removeClass('active');
+               $('[href="#about"]').removeClass('active');
+               $('[href="#contact"]').removeClass('active');
+            }
+
+            if( scrollPos > aboutSectionOffset && scrollPos < workSectionOffset ){
+
+               $('[href="#"]').removeClass('active');
+               $('[href="#myWork"]').removeClass('active');
+               $('[href="#about"]').addClass('active');
+               $('[href="#contact"]').removeClass('active');
+            }
+
+            if( scrollPos > workSectionOffset && scrollPos < contactSectionOffset ){
+
+               $('[href="#"]').removeClass('active');
+               $('[href="#myWork"]').addClass('active');
+               $('[href="#about"]').removeClass('active');
+               $('[href="#contact"]').removeClass('active');
+            }
+
+            if( scrollPos > contactSectionOffset){
+
+               $('[href="#"]').removeClass('active');
+               $('[href="#myWork"]').removeClass('active');
+               $('[href="#about"]').removeClass('active');
+               $('[href="#contact"]').addClass('active');
+            }
+
          }); // end of window on scroll
+
 
 
       }); // end of document ready()

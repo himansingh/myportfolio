@@ -7,6 +7,10 @@ h1{
 	color : #f4c700;
 }
 
+.active{
+	font-weight: 700;
+}
+
 div.card{
 
 	margin-top: 40px ;
@@ -45,7 +49,7 @@ hr.title-seperator:after{
 	display: inline-block;
 	position: relative;
 	color: white ;
-	content: '⋆';
+	content: '\22C6';
 	top : -15px;
 	padding: 0 10px ;
 }
@@ -63,7 +67,7 @@ hr.title-seperator3:after, hr.title-seperator3{
 
 	color: #2674AA ;
 	font-size: 1.1em;
-	content: '★';
+	content: '\2605';
 	border-color: #2674AA ;
 	border-width: 3px;
 	background-color: #B8CFEC ;
@@ -73,11 +77,21 @@ hr.title-seperator4:after , hr.title-seperator4{
 
 	color: #6D9348 ;
 	font-size: 1.1em;
-	content: '★';
+	content: '\2605';
 	border-color: #6D9348 ;
 	border-width: 3px;
 	background-color: #FFEDC2 ;
+}
 
+#topButton{
+
+	font-weight: 700;
+	color: white ;
+}
+
+#topButton:hover {
+
+	background-color: black ;
 }
 
 div.card:hover img{
